@@ -15,8 +15,6 @@ const mongo_password=process.env.MONGODB_PASSWORD;
 
 const url = "mongodb+srv://"+mongo_user+":"+mongo_password+"@"+mongo_url+"/contactdatabase?retryWrites=true&w=majority";
 
-console.log(url);
-
 mongoose.connect(url).then(
 	() => console.log("Connected to MongoDB"),
 (error) => console.log("Failed to connect to MongoDB. Reason", error)
