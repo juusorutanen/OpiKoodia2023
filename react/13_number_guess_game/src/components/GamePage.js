@@ -10,7 +10,7 @@ const GamePage = (props) => {
 
     const onChange = (event) => {
         setState({
-            guess:event.garget.value
+            guess:event.target.value
         })
     }
 
