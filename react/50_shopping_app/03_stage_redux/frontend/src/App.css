@@ -1,0 +1,115 @@
+.App {
+  text-align: center;
+}
+.login-form {
+  display: flex;
+  justify-content: center;
+  background-color:"red";
+	text-align:"center";
+}
+
+.login-form > form {
+  margin-top:20px;
+  background-color: #183f33;
+  width: 30%;
+  padding:20px;
+  border-radius:10px;
+}
+
+
+.btn-register {
+  color:#fef8f2;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons  {
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+  align-items: center;
+  text-align: center;
+}
+
+
+a,li, ul {
+  color:"white";
+}
+
+.form-label {
+  color:white;
+}
+
+h1 {
+  color:#183f33;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  align-items: center;
+}
+
+.search > input, .btn-search {
+  width: 20%;
+  border-radius: 5px;
+  border:none;
+}
+.btn-search {
+background-color:#5DBB64;
+}
+
+
+.buttons > button {
+  width: 100%;
+}
+
+.btn {
+  background-color: #5DBB64;
+  border:none;
+}
+
+.btn-register {
+  background: none;
+}
+
+.btn-remove , .btn-danger{
+  background-color:#ED2939;
+  color:white;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+#items tr:nth-child(even){background-color: #FFFFCC;}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
