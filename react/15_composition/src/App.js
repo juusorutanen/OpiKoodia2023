@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import ContactInfo from './components/ContactInfo';
 import ContactCard from './components/ContactCard';
@@ -13,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <ContactCard>
-        <ContactInfo name="Juuso" profession="Työtön"/>
+        <ContactInfo name="Juuso" profession="Boss"/>
       </ContactCard>
       <ContactCard>
         <h3>Current clicks:{click}</h3>
