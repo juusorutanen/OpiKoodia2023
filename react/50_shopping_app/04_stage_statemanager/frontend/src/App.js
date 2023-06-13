@@ -18,7 +18,7 @@ function App() {
 		if(isLogged) {
 			getList();
 		}
-	})
+	},[isLogged])
 	
 	// RENDERING
 	
