@@ -26,12 +26,17 @@ const ShoppingList = (props) => {
 		})
 	}
 	
-	const searchByType = () => {
-		getList(search.type);
+	
+	  const searchByType = () => {
+		
+		const lowerCaseSearchType = search.type.toLowerCase();
+	
+		getList(lowerCaseSearchType);
+	
 		setSearch({
-			type:""
-		})
-	}
+		  type: '',
+		});
+	  };
 	
 	const changeMode = (mode,index) => {
 		if(mode === "remove") {
@@ -79,6 +84,8 @@ const ShoppingList = (props) => {
 			<Row key={item._id} item={item} index={index} changeMode={changeMode}/>
 		)
 	})
+
+	const totalSum = list.reduce((sum, item) => sum + item.price * item.count, 0);
 	
 	return(
         <div style={{"marginTop":20}}>
@@ -88,11 +95,12 @@ const ShoppingList = (props) => {
             <input type="text"
                     name="search"
                     id="search"
+					className="form-control"
                     onChange={onChange}
                     value={search.type}/>
-                    <button className="btn btn-success" onClick={searchByType}>Search items by type</button>
+                    <button className="btn search-button btn-success" onClick={searchByType}>Search items by type</button>
                     </div>
-		<table style={{"marginTop":50, "padding":"30px"}}className="table table-dark table-striped">
+		<table style={{"marginTop":50, "padding":"30px"}}className="table table-borderless table-striped">
             
 			<thead>
 				<tr>
@@ -107,6 +115,7 @@ const ShoppingList = (props) => {
 			{items}
 			</tbody>
 		</table>
+		<h1>Total Sum: {totalSum.toFixed(2)}€</h1>
         </div>
 	)
 }

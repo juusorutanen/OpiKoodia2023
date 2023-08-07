@@ -10,6 +10,8 @@ let app = express();
 
 app.use(express.json());
 
+app.use("/",express.static("public"));
+
 const mongo_url = process.env.MONGODB_URL;
 const mongo_user = process.env.MONGODB_USER;
 const mongo_password = process.env.MONGODB_PASSWORD;

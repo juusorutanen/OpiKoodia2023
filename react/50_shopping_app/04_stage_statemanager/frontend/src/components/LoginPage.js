@@ -38,8 +38,13 @@ const LoginPage = (props) => {
 	}
 	
 	return(
+		
 		<div className="login-form">
-			<form className="mb-5">
+			<div className="info-text">
+				<p>Please login or create an account to make a shopping list.</p>
+			</div>
+			<form>
+			<h1>Login here</h1>
 				<label htmlFor="username" className="form-label">Username</label>
 				<input type="text"
 						name="username"

@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import useAction from '../hooks/useAction';
+import '../App.css'
+
 
 const ShoppingForm = (props) => {
 	
@@ -12,13 +14,17 @@ const ShoppingForm = (props) => {
 	const {add} = useAction();
 	
 	const onChange = (event) => {
-		setState((state) => {
-			return {
-				...state,
-				[event.target.name]:event.target.value
-			}
-		})
-	}
+		const { name, value } = event.target;
+
+		const lowercaseValue = name === "type" ? value.toLowerCase() : value;
+	
+		setState((prevState) => {
+		  return {
+			...prevState,
+			[name]: lowercaseValue
+		  };
+		});
+	  };
 	
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -37,46 +43,35 @@ const ShoppingForm = (props) => {
         <div>
             <h1>Add item</h1>
         
-		<div style={{
-			"backgroundColor":"#183f33",
-			"margin":"auto",
-			"width":"40%",
-			"textAlign":"center",
-            "borderRadius":"10px",
-            "padding":"10px"
-		}}>
-            
-			<form className="mb-20" onSubmit={onSubmit}>
-				<label htmlFor="type" className="form-label">Type:</label>
-				<input type="text"
-						className="form-control"
-						name="type"
-						id="type"
-						onChange={onChange}
-						value={state.type}/>
-				<label htmlFor="count" className="form-label">Count:</label>
-				<input type="number"
-						className="form-control"
-						name="count"
-						id="count"
-						onChange={onChange}
-						value={state.count}/>
-				<label htmlFor="price" className="form-label">Price:</label>
-				<input type="number"
-						className="form-control"
-						name="price"
-						id="price"
-						step="0.01"
-						onChange={onChange}
-						value={state.price}/>
-				<input style={{
-                    "backgroundColor":"#32cd32",
-                    "width":"200px",
-                    "border":"none"
-            }}type="submit" className="btn btn-success mt-2 btn-lg" value="Add"/>
-			</form>
+		
+            <div className='login-form'>
+				<form onSubmit={onSubmit}>
+					<label htmlFor="type" className="form-label">Type:</label>
+					<input type="text"
+							className="form-control"
+							name="type"
+							id="type"
+							onChange={onChange}
+							value={state.type}/>
+					<label htmlFor="count" className="form-label">Count:</label>
+					<input type="number"
+							className="form-control"
+							name="count"
+							id="count"
+							onChange={onChange}
+							value={state.count}/>
+					<label htmlFor="price" className="form-label">Price:</label>
+					<input type="number"
+							className="form-control"
+							name="price"
+							id="price"
+							step="0.01"
+							onChange={onChange}
+							value={state.price}/>
+					<input type="submit" style={{marginTop:"20px",width:"100%"}}className="btn btn-success" value="Add"/>
+				</form>
+			</div>
 		</div>
-        </div>
 	)
 }
 
