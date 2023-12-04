@@ -1,44 +1,62 @@
 .App {
   text-align: center;
 }
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-	text-align:"center";
+	text-align:center;
   padding:10px;
+  width: 100%;
+}
+
+form > h1 {
+  color: var(--coal);
 }
 
 .login-form > form {
   margin-top:20px;
-  background-color: rgba(255,255,255,0.13);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 40px rgba(8,7,16,0.6);
-  width: 40%;
+  background-color: var(--beige);
   padding:20px;
   border-radius:10px;
-  color:#183f33
+  color:#0f0d0e;
+  width: 50%;
 }
 
-@media (max-height: 768px) {
+@media (max-width: 768px) {
   .login-form > form {
     width: 100%;
   }
 }
 
 .form-label {
-  font-weight: 300;
-  color:#183f33
+font-weight: 300;
+color:#0f0d0e;
+}
+
+.btn {
+  box-shadow:2px 2px 0 #0f0d0e;
 }
 
 .btn-success {
-  background-color: #00ab00;
+  background-color: var(--green);
   border: none;
 }
 .btn-register {
-  color:#fef8f2;
+  color:#0f0d0e;
+  box-shadow: none;
+}
+
+.btn-register:hover {
+  color: var(--pink);
 }
 
 .buttons {
@@ -49,11 +67,11 @@
 
 .info-text {
   padding-bottom: 10px;
+  color: #f9f4da;
 }
 
 
 h1 {
-  color:#183f33;
   font-weight: bold;
   margin-top: 20px;
 }
@@ -86,11 +104,15 @@ h1 {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #ade1ad;
+  background-color: var(--green);
+}
+
+.nav-logo {
+  color:var(--beige);
 }
 
 nav > ul {
-  color:black;
+  color:#0f0d0e;
 }
 
 .nav-links {
@@ -116,12 +138,12 @@ nav > ul {
 .nav-elements ul a {
   font-size: 16px;
   font-weight: 400;
-  color: #2f234f;
+  color: var(--beige);
   text-decoration: none;
 }
 
 .nav-elements ul a:hover {
-  color:white;
+  color:var(--pink);
 }
 
 .nav-elements ul a.active {
@@ -151,13 +173,12 @@ nav > ul {
     display: block;
     cursor: pointer;
   }
-
   .nav-elements {
     position: absolute;
     right: 0;
     top: 60px;
     z-index: 1;
-    background-color: #ade1ad;
+    background-color: var(--coal);
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
@@ -167,7 +188,7 @@ nav > ul {
   .nav-elements.active {
     width: 270px;
     z-index: 1;
-    background-color: #ade1ad;
+    background-color: var(--coal);
   }
 
   .nav-elements ul {
@@ -182,11 +203,20 @@ nav > ul {
 }
 
 span {
-  color: #00ab00;
+  color: var(--yellow);
 }
 
 .table {
-  --bs-table-bg: #d7f8cbfc !important;
-  --bs-table-striped-bg: #4a8e535c !important;
+  --bs-table-bg: var(--beige) !important;
+  --bs-table-striped-bg: #f4e1b7 !important;
 }
 
+.error-message {
+  color:white;
+}
+
+@media (max-width: 768px) {
+table, .btn {
+  font-size: 0.8rem;
+}
+}

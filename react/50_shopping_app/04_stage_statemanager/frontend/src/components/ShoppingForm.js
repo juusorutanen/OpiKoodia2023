@@ -43,7 +43,7 @@ const ShoppingForm = (props) => {
         <div>
             <h1>Add item</h1>
         
-		
+		<div class='login-container'>
             <div className='login-form'>
 				<form onSubmit={onSubmit}>
 					<label htmlFor="type" className="form-label">Type:</label>
@@ -70,6 +70,7 @@ const ShoppingForm = (props) => {
 							value={state.price}/>
 					<input type="submit" style={{marginTop:"20px",width:"100%"}}className="btn btn-success" value="Add"/>
 				</form>
+			</div>
 			</div>
 		</div>
 	)

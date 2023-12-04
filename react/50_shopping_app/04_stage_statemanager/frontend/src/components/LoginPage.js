@@ -38,13 +38,13 @@ const LoginPage = (props) => {
 	}
 	
 	return(
-		
+		<div className="login-container">
 		<div className="login-form">
 			<div className="info-text">
 				<p>Please login or create an account to make a shopping list.</p>
 			</div>
 			<form>
-			<h1>Login here</h1>
+			<h1>Login or register here</h1>
 				<label htmlFor="username" className="form-label">Username</label>
 				<input type="text"
 						name="username"
@@ -65,6 +65,7 @@ const LoginPage = (props) => {
                 </div>
 			</form>
 		</div>
+	</div>
 		
 	)
 }

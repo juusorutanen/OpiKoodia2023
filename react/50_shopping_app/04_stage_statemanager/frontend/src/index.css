@@ -1,12 +1,25 @@
+:root {
+  --coal: #0f0d0e;
+  --charcoal: #231f20;
+  --green: #0ba95b;
+  --yellow: #fcba28;
+  --beige:#f9f4da;
+  --pink: #f38ba3;
+}
+
 body, html {
   margin: 0;
-  background-image: url(../src/assets/surf.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  overflow-x: hidden;
+  background-color: #0f0d0e;
+  background-image: repeating-linear-gradient(to right, #231f20, #231f20 1px, transparent 1px, transparent 30px),
+                    repeating-linear-gradient(to bottom, #231f20, #231f20 1px, transparent 1px, transparent 30px);
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3 {
+  color: var(--beige);
 }
 
 code {

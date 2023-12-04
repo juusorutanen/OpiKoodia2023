@@ -19,7 +19,7 @@ const Hamburger = () => (
           height="4"
           rx="2"
           transform="translate(304 47)"
-          fill="#574c4c"
+          fill="#f9f4da"
         />
         <rect
           id="Rectangle_5"
@@ -28,7 +28,7 @@ const Hamburger = () => (
           height="4"
           rx="2"
           transform="translate(304 67)"
-          fill="#574c4c"
+          fill="#f9f4da"
         />
         <rect
           id="Rectangle_4"
@@ -37,7 +37,7 @@ const Hamburger = () => (
           height="4"
           rx="2"
           transform="translate(294 57)"
-          fill="#574c4c"
+          fill="#f9f4da"
         />
       </g>
     </svg>
@@ -50,6 +50,11 @@ const [showNavbar, setShowNavbar] = useState(false);
 const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
 };
+
+const closeNavbar = () => {
+  setShowNavbar(false);
+};
+
 
 
 const {isLogged,user} = useAppState();
@@ -65,10 +70,10 @@ const {logout} = useAction();
             <div className={`nav-elements  ${showNavbar && "active"}`}>
             <ul>
                 <li>
-                    <Link to="/" className="nav-link">Shopping List</Link>
+                    <Link to="/" className="nav-link"onClick={closeNavbar}>Shopping list</Link>
                 </li>
                 <li>
-                    <Link to="/form" className="nav-link">Add new item</Link>
+                    <Link to="/form" className="nav-link" onClick={closeNavbar}>Add new item</Link>
                 </li>
                 <li>
                     <Link to="/" className="nav-link" onClick={logout}>Log out</Link>
@@ -83,7 +88,7 @@ const {logout} = useAction();
 } else {
     return (
     <nav style={{
-        backgroundColor:"#ade1ad"}}
+        backgroundColor:"#0ba95b"}}
         className="navbar navbar-expand-lg navbar-light">
         <a className="navbar-brand" style={{"marginLeft":10,color:"white"}}>Shopping App</a>
         <ul className="navbar-nav">

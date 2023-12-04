@@ -22,18 +22,18 @@ function App() {
 	
 	// RENDERING
 	
-	let message =<h4></h4>
+	let message =<h4 className="error-message"></h4>
 	if(loading) {
 		message = <h4>Loading ...</h4>
 	}
 	if(error) {
-		message = <h4>{error}</h4>
+		message = <h4 className="error-message">{error}</h4>
 	}
 	if(isLogged) {
 		return (
 			<div className="App">
 				<Navbar />
-				<div style={{height:25, textAlign:"center"}}>
+				<div style={{height: "25",textAlign:"center"}}>
 					{message}
 				</div>
 				<Routes>			
@@ -47,7 +47,7 @@ function App() {
 		return(
 			<div className="App">
 				<Navbar/>
-				<div style={{height:25, textAlign:"center"}}>
+				<div style={{height: "25",textAlign:"center"}}>
 					{message}
 				</div>
 				<Routes>			
